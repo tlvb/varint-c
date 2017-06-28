@@ -15,7 +15,7 @@ int varint_classify_i(int64_t i) { /*{{{*/
 	if (i < -3)       { return VARINT_NEG_R; }
 	else if (i < 0)   { return VARINT_NEG_2; }
 	else if ((i & ~0x000000000000007f) == 0) { return VARINT_POS_7;  }
-	else if ((i & ~0x00000000000003ff) == 0) { return VARINT_POS_14; }
+	else if ((i & ~0x0000000000003fff) == 0) { return VARINT_POS_14; }
 	else if ((i & ~0x00000000001fffff) == 0) { return VARINT_POS_21; }
 	else if ((i & ~0x000000000fffffff) == 0) { return VARINT_POS_28; }
 	else if ((i & ~0x0000000fffffffff) == 0) { return VARINT_POS_32; }
